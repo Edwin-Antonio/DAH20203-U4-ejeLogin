@@ -1,0 +1,7 @@
+{
+  "name": "ejeLogin_U4",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
