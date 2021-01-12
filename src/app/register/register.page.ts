@@ -15,6 +15,7 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {
   }
+
   async onRegister(){
     const user = await this.authSev.onRegister(this.user);
     if (user){

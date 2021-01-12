@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <h3>Login</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="email" type="email" [(ngModel)]="user.email" placeholder="Correo"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" [(ngModel)]="user.password" placeholder="Password"></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button (click)="onLogin()" expand="block">Login</ion-button>
+          </div>
+          <div>
+            <ion-button expand="block" size="large" color="danger" (click)="onLoginGoogle()">GOOGLE</ion-button>
+          </div>
+          <div>
+            <ion-button expand="block" size="large" color="danger" (click)="onLoginGit()">Github</ion-button>
+          </div>
+          <div>
+            <a routerLink="/register">Haven't account yet!</a>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

@@ -11,26 +11,26 @@ export class AuthService {
   public isLogged: any = false;
   constructor(public afAuth: AngularFireAuth, private afsAuth: AngularFireAuth) {
     afAuth.authState.subscribe(user => (this.isLogged = user));
-   }
+  }
 
-   // regyster
+  // regyster
 
-   async onRegister(user: User){
-    try{
+  async onRegister(user: User) {
+    try {
       return await this.afAuth.createUserWithEmailAndPassword(
         user.password,
         user.email
       );
-    } catch (error){
+    } catch (error) {
       console.log('error on regiser', error);
     }
-   }
+  }
 
-   loginGitUser(){
-     return this.afAuth.signInWithPopup(new auth.GithubAuthProvider());
-   }
+  loginGitUser() {
+    return this.afAuth.signInWithPopup(new auth.GithubAuthProvider());
+  }
 
-   loginGoogleUser(){
+  loginGoogleUser() {
     return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 }
